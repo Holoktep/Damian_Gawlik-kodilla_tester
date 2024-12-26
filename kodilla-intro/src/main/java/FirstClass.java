@@ -1,6 +1,7 @@
 public class FirstClass {
     public static void main(String[] args) {
 
+
         Notebook notebook = new Notebook(600, 500, 2022);
         System.out.println(" notebook weight " + notebook.weight + " price " + notebook.price + " year " + notebook.year);
         notebook.checkPrice();

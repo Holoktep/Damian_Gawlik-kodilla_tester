@@ -23,6 +23,7 @@ public class Grades {
         int sum = 0;
         for (int i = 0; i < this.size; i ++) {
             sum += this.grades[i];
+            sum = sum + this.grades[i];
         }
         return (double) sum / this.size;
     }
