@@ -1,9 +1,14 @@
-public class Application {
-    public static void main(String[] args) {
-        String name = "Adam";
-        double age = 40.5;
-        double height = 178;
+public class NewUser {
+    private double age;
+    private double height;
+    private String name;
 
+    public NewUser(double age, double hight, String name){
+        this.age = age;
+        this.height = hight;
+        this.name = name;
+    }
+    public void checkNewUser(){
         if (name != null) {
             if (age > 30 && height > 160) {
                 System.out.println("User is older than 30 and taller than 160cm");
@@ -11,7 +16,5 @@ public class Application {
                 System.out.println("User is 30 (or younger) or 160cm (or shorter)");
             }
         }
-        NewUser damian = new NewUser(40.5,178, "Damian");
-        damian.checkNewUser();
     }
 }
