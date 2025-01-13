@@ -7,14 +7,8 @@ public class OperatingSystem {
         this.year = year;
 
     }
-
-
-
     public void turnOn() {
-
     }
-
     public void turnOff() {
-
     }
 }
