@@ -2,7 +2,9 @@ package com.kodilla.collections.interfaces.homework;
 
 public class Opel implements Car {
     private int speed = 0;
-
+    public Opel(int speed) { // Dodano typ int
+        this.speed = speed;
+    }
     @Override
     public int getSpeed() {
         return speed;
