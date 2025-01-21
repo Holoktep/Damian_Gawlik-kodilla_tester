@@ -22,4 +22,11 @@ public class Tesla implements Car {
             speed = 0;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Tesla{" +
+                "speed=" + speed +
+                '}';
+    }
 }
