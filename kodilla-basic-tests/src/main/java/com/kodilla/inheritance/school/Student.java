@@ -9,7 +9,7 @@ public class Student {
     private Grades history;
 
     public Student(String name) {
-        this.name = name;
+        this.name =  name;
         this.maths = new Grades();
         this.physics = new Grades();
         this.geography = new Grades();

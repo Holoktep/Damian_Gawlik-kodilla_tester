@@ -16,4 +16,22 @@ public class CalculatorTestSuite {
         int sumReslut = calculator.sum(a, b);
         assertEquals(13, sumReslut);
     }
+
+    @Test
+    public void testSquare() {
+        Calculator calculator = new Calculator();
+        double  a = 10.53;
+        double squareResult = calculator.square(a);
+        assertEquals(110.88, squareResult, 0.001);
+    }
+
+    @Test
+    public void testSubTract() {
+        Calculator calculator = new Calculator();
+        int a = 24;
+        int b = 15;
+        int subtractResult = calculator.subtract(a, b);
+        assertEquals(9, subtractResult);
+
+    }
 }
