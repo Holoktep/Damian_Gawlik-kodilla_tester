@@ -29,7 +29,9 @@ public class Order {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
-        return Double.compare(quantiti, order.quantiti) == 0 && Objects.equals(orderNumber, order.orderNumber) && Objects.equals(productOrder, order.productOrder);
+        return Double.compare(quantiti, order.quantiti) == 0
+                && Objects.equals(orderNumber, order.orderNumber)
+                && Objects.equals(productOrder, order.productOrder);
     }
 
     @Override
