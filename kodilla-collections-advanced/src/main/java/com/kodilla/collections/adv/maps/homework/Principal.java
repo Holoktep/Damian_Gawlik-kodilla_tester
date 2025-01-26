@@ -31,7 +31,8 @@ public class Principal {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Principal principal = (Principal) o;
-        return Objects.equals(firstname, principal.firstname) && Objects.equals(lastname, principal.lastname);
+        return Objects.equals(firstname, principal.firstname)
+                && Objects.equals(lastname, principal.lastname);
     }
 
     @Override
