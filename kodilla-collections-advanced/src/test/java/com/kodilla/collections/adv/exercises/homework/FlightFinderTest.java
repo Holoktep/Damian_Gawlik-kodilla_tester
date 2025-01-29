@@ -11,8 +11,8 @@ class FlightFinderTest {
         FlightFinder flightFinder = new FlightFinder();
         List<Flight> flightsFromWarszawa = flightFinder.findFlightsFrom("Warszawa");
         assertEquals(2, flightsFromWarszawa.size());
-        assertFalse(flightsFromWarszawa.contains(new Flight("Warszawa","Lizbona")));
-        assertFalse(flightsFromWarszawa.contains(new Flight("Warszawa","Kraków")));
+        assertTrue(flightsFromWarszawa.contains(new Flight("Warszawa","Lizbona")));
+        assertTrue(flightsFromWarszawa.contains(new Flight("Warszawa","Kraków")));
     }
 
     @Test
@@ -20,6 +20,6 @@ class FlightFinderTest {
         FlightFinder flightFinder = new FlightFinder();
         List<Flight> flightsToWarszawa = flightFinder.findFlightsTo("Warszawa");
         assertEquals(1, flightsToWarszawa.size());
-        assertFalse(flightsToWarszawa.contains(new Flight("Londyn", "Warszawa")));
+        assertTrue(flightsToWarszawa.contains(new Flight("Londyn", "Warszawa")));
     }
 }
