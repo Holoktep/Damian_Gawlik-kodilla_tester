@@ -40,5 +40,4 @@ public class UsersManager {
     public static String getUserName(User user) {
         return user.getUsername();
     }
-
 }
