@@ -16,6 +16,5 @@ public class Student {
     public Teacher getTeacher() {
         return teacher;
     }
-
 }
 
