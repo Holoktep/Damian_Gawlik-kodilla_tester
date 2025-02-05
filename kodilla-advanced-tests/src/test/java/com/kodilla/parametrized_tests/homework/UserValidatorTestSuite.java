@@ -22,4 +22,18 @@ class UserValidatorTestSuite {
         System.out.println(email);
         assertTrue(userValidator.validateEmail(email), email);
     }
+
+    @ParameterizedTest
+    @CsvSource (value = {"Damian33@4", "To@mek12.", "Holok@tep", "AS32-14.2535@4grtg.nbfg"})
+    public void shouldValidateUsernameBeFalse(String username){
+        System.out.println("|" + username + "|");
+        assertFalse(userValidator.validateUsername(username), username);
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {"damianxkubagmailcom", "holoko12.13o2pl"})
+    public void shouldValidateEmailBeFalse(String email){
+        System.out.println(email);
+        assertFalse(userValidator.validateEmail(email), email);
+    }
 }

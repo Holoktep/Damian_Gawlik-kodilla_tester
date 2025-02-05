@@ -27,9 +27,7 @@ public class Application {
         }
 
         for (Student student : students) {
-            String teacherName = Optional.ofNullable(student.getTeacher())
-                    .map(Teacher::getName)
-                    .orElse("<undefined>");
+            String teacherName = (student.getTeacherName());
             System.out.println("Student: " + student.getName() + " Teacher: " + teacherName);
         }
     }

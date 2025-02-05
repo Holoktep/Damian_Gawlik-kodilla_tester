@@ -1,0 +1,5 @@
+1,2,3,4,5,6;6     // Wszystkie liczby użytkownika trafiają
+10,20,30,40,41,42;0 // Żadna liczba nie trafia
+1,2,3,10,11,12;3   // Trafiają trzy liczby (1, 2, 3)
+0,50,51,52,53,54;Invalid // Liczby poza zakresem
+1,2,3;Invalid      // Za mało liczb
