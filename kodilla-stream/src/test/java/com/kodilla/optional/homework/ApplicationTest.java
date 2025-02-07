@@ -12,6 +12,10 @@ class ApplicationTest {
         Student student = new Student("Tomek", teacher1);
         assertEquals("Fizyka", student.getTeacherName());
     }
+    @Test
+    void testTeacherNull(){
+        Student student = new Student("Robert", null);
+        assertEquals(null, student.getTeacher());
+    }
 }
 
-zrob test gdzie teacher jest null
