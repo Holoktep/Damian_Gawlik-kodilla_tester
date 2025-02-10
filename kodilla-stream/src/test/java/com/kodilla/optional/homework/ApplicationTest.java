@@ -2,6 +2,8 @@ package com.kodilla.optional.homework;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ApplicationTest {
@@ -15,7 +17,7 @@ class ApplicationTest {
     @Test
     void testTeacherNull(){
         Student student = new Student("Kasia", null);
-        assertNull(null, student.getTeacherName());
+        assertEquals("<undefined>", student.getTeacherName());
     }
 }
 
