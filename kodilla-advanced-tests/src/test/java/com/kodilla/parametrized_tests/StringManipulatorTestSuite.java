@@ -16,7 +16,6 @@ public class StringManipulatorTestSuite {
     public void shouldReverseStringWithLowerCase(String input, String expected) {
         assertEquals(expected, manipulator.reverseWithLowerCase(input));
     }
-
     @ParameterizedTest
     @MethodSource(value = "com.kodilla.parametrized_tests.StringSources#provideStringsForTestingLength")
     public void shouldCalculateStringLengthWithoutSpaces(String input, int expected) {
