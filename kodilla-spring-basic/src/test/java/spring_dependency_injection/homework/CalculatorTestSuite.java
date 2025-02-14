@@ -1,4 +1,4 @@
-package com.kodilla.spring.basic.spring_dependency_injection.homework;
+package spring_dependency_injection.homework;
 
 import com.kodilla.spring.basic.dependency_injection.spring_dependency_injection.Calculator;
 import org.junit.jupiter.api.Test;
