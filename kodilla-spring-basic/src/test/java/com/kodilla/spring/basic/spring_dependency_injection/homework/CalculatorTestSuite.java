@@ -1,5 +1,6 @@
 package com.kodilla.spring.basic.spring_dependency_injection.homework;
 
+import com.kodilla.spring.basic.dependency_injection.spring_dependency_injection.Calculator;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
