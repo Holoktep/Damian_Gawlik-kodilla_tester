@@ -1,9 +1,12 @@
 package com.kodilla.parametrized_tests;
 
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,6 +19,7 @@ public class StringManipulatorTestSuite {
     public void shouldReverseStringWithLowerCase(String input, String expected) {
         assertEquals(expected, manipulator.reverseWithLowerCase(input));
     }
+
     @ParameterizedTest
     @MethodSource(value = "com.kodilla.parametrized_tests.StringSources#provideStringsForTestingLength")
     public void shouldCalculateStringLengthWithoutSpaces(String input, int expected) {
@@ -27,4 +31,5 @@ public class StringManipulatorTestSuite {
     public void shouldCountNumberOfCommas(String input, int expected) {
         assertEquals(expected, manipulator.countNumberOfCommas(input));
     }
+
 }
