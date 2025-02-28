@@ -1,6 +1,9 @@
 package com.kodilla.parametrized_tests.homework;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -41,6 +44,13 @@ class GamblingMachineTestSuite {
         numbers.add(23);
         GamblingMachine gamblingMachine = new GamblingMachine();
         assertTrue(gamblingMachine.howManyWins(numbers) >= 0);
+    }
+
+    @ParameterizedTest
+    @MethodSource(value = "com.kodilla.parametrized_tests.homework.GamblingData#data")
+    public void GamblingNumbersData(Set<Integer>numbers){
+        GamblingMachine gamblingMachine = new GamblingMachine();
+        assertThrows(InvalidNumbersException.class , () -> gamblingMachine.howManyWins(numbers));
     }
 }
 
