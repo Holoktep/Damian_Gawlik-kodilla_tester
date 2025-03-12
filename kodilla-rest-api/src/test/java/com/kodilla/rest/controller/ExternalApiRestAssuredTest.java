@@ -1,6 +1,12 @@
 package com.kodilla.rest.controller;
 
+import io.restassured.module.mockmvc.RestAssuredMockMvc;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpStatus;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -22,4 +28,31 @@ class ExternalApiRestAssuredTest {
                 body("body", equalTo("quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto")).
                 log().all();  // [5]
     }
+//fetch('https://jsonplaceholder.typicode.com/posts/1', {
+//                        method: 'PUT',
+//                body: JSON.stringify({
+//                id: 1,
+//                title: 'foo',
+//                body: 'bar',
+//                userId: 1,
+//  }),
+//        headers: {
+//            'Content-type': 'application/json; charset=UTF-8',
+//        },
+//})
+//  .then((response) => response.json())
+//                .then((json) => console.log(json));
+    @Test
+    void UpdatePost(){
+        given().
+                header("Content-Type", "application/json").
+                body("{\"title\": \"newtitle\"}").
+                when().
+                put("https://jsonplaceholder.typicode.com/posts/1").
+                then().
+                assertThat().
+                statusCode(200).
+                log().all();
+    }
 }
+

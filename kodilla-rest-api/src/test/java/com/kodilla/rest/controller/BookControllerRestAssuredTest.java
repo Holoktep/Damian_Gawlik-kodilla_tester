@@ -2,6 +2,7 @@ package com.kodilla.rest.controller;
 
 import com.kodilla.rest.domain.BookDto;
 import com.kodilla.rest.service.BookService;
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.hamcrest.Matchers;
@@ -74,8 +75,8 @@ class BookControllerRestAssuredTest {
         Map<String, Object> updatedPostData = new HashMap<>();
         updatedPostData.put("id", 1);
         updatedPostData.put("title", "Updated title");
-
-        given()
+        updatedPostData.put("userId", 1);
+        RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(updatedPostData)
                 .when()
