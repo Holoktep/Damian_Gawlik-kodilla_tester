@@ -13,13 +13,14 @@ public class AllegroTestingApp {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
         WebDriver driver = new ChromeDriver(chromeOptions);
-        driver.get("https://allegro.pl/");
+        driver.get("https://www.ebay.pl/");
 
-        WebElement categoryField = driver.findElement(By.xpath("//option[contains(text(), 'Elektronika')]"));
+        WebElement categoryField = driver.findElement(By.xpath("//*[@id=\"gh-cat\"]"));
         Select categorySelect = new Select(categoryField);
-        categorySelect.selectByIndex(4);
+        categorySelect.selectByIndex(9);
 
-        WebElement inputField = driver.findElement(By.name("string")); // [4]
+
+        WebElement inputField = driver.findElement(By.name("_nkw")); // [4]
         inputField.sendKeys("Mavic mini");
         inputField.submit();
     }
