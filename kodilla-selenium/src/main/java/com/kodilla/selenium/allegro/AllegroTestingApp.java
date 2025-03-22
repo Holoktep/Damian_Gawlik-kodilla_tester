@@ -7,6 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
+
+import java.util.List;
+
+
+
+
 public class AllegroTestingApp {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "c:\\selenium-drivers\\chrome\\chromedriver.exe");    // [1]
@@ -15,7 +21,7 @@ public class AllegroTestingApp {
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.get("https://www.ebay.pl/");
 
-        WebElement categoryField = driver.findElement(By.xpath("//*[@id=\"gh-cat\"]"));
+        WebElement categoryField = driver.findElement(By.cssSelector("#gh-cat"));
         Select categorySelect = new Select(categoryField);
         categorySelect.selectByIndex(9);
 
@@ -23,6 +29,12 @@ public class AllegroTestingApp {
         WebElement inputField = driver.findElement(By.name("_nkw")); // [4]
         inputField.sendKeys("Mavic mini");
         inputField.submit();
+
+        List<WebElement> elements = driver.findElements(By.className("s-item"));
+
+        for (WebElement element : elements) {
+            System.out.println(element.getText());
+        }
     }
 }
 
