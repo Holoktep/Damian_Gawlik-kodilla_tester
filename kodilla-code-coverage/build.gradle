@@ -57,6 +57,15 @@ jacocoTestCoverageVerification {
     }
 }
 
+
+sourceCompatibility = JavaVersion.VERSION_17
+
 dependencies {
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    implementation 'mysql:mysql-connector-java:8.0.32'
+    implementation 'com.mysql:mysql-connector-j:9.2.0' // <- przeniesione tutaj
+}
+
+test {
+    useJUnitPlatform()
 }
