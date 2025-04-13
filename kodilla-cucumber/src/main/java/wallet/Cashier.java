@@ -8,6 +8,12 @@ public class Cashier {
     }
 
     public void withdraw(Wallet wallet, int amount) {
+        if (amount <= 0) {
+            cashSlot.dispense(0);
+            wallet.setLastMessage("Invalid withdrawal amount");
+            return;
+        }
+
         if (wallet.getBalance() >= amount) {
             wallet.debit(amount);
             cashSlot.dispense(amount);

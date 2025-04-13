@@ -4,11 +4,15 @@ public class Wallet {
     private int balance = 0;
     private String lastMessage = "";
 
-    public Wallet() {
-    }
+    public Wallet() {}
 
     public void deposit(int money) {
+        if (money <= 0) {
+            lastMessage = "Invalid deposit amount";
+            return;
+        }
         this.balance += money;
+        lastMessage = "Deposit successful";
     }
 
     public int getBalance() {
